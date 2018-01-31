@@ -47,14 +47,21 @@
           </tbody>
         </table>
       </div>
+
+      <pagination> </pagination>
     </div>
   </div>
 </template>
 
 <script>
+import Pagination from './Pagination';
+
 export default {
   name: 'grid',
   props: ['cars'],
+  components: {
+    Pagination,
+  },
   data() {
     return {
       removeCars: [],

@@ -126,12 +126,12 @@ export default {
     },
   },
   watch: {
-   "newCar.placa"(valAtual, valAnterior) {
-      let pattern = valAtual.split('');
-        if(pattern.length >= 3 && pattern.indexOf('-') === -1) {
-            pattern.splice(4,0,"-");
-            this.newCar.placa = pattern.join('');
-        }
+    placa(valAtual) {
+      const pattern = valAtual.split('');
+      if (pattern.length >= 3 && pattern.indexOf('-') === -1) {
+        pattern.splice(4, 0, '-');
+        this.newCar.placa = pattern.join('');
+      }
     },
   },
   methods: {
@@ -145,7 +145,7 @@ export default {
     },
     saveCar() {
       this.$emit('saveCar', this.newCar);
-      this.cleanForm();
+      // this.cleanForm();
       this.tooggleModal();
     },
     tooggleModal() {
