@@ -1,17 +1,26 @@
 <template>
   <div id="app">
     <div class="container-fluid">
+
     <navbar></navbar>
+
     <toolbar
       @addList="updateCars"
       @deleteCars="deleteCars"
       @searchCar="searchCar">
     </toolbar>
+
     <grid
       @order="order"
-      :cars="listCars"
+      :cars="page"
       @selectCar="selectCars">
     </grid>
+
+    <pagination
+      :totalPages="totalPages"
+      :pageIndex="pageIndex"
+      @paginate="paginate">
+    </pagination>
 
   </div>
   </div>
@@ -21,6 +30,7 @@
 import Navbar from './components/common/Navbar';
 import Toolbar from './components/common/Toolbar';
 import Grid from './components/common/Grid';
+import Pagination from './components/common/Pagination';
 
 export default {
   name: 'App',
@@ -28,12 +38,16 @@ export default {
     Navbar,
     Toolbar,
     Grid,
+    Pagination,
   },
   data() {
     return {
       cars: [],
       selected: [],
       filtro: '',
+      page: [],
+      pageIndex: 0,
+      totalPages: 0,
     };
   },
   computed: {
@@ -62,10 +76,27 @@ export default {
     },
     searchCar(search) {
       this.filtro = search;
+      this.paginate();
     },
     order(tipo) {
       this.cars = this.cars.sort((elemOlder, elemNew) =>
         (elemOlder[tipo].length > elemNew[tipo].length ? 1 : -1));
+    },
+
+    paginate(pageIndex = 0) {
+      let cars = this.cars;
+
+      if (this.filtro) {
+        const exp = new RegExp(this.filtro.trim(), 'i');
+        cars = cars.filter(car => exp.test(car.combustivel) || exp.test(car.marca));
+      }
+
+      this.pageIndex = pageIndex;
+      this.totalPages = Math.ceil(cars.length / 5);
+      const start = this.pageIndex * 5;
+      const end = start + 5;
+      console.log('page', pageIndex, start, end);
+      this.page = cars.slice(start, end);
     },
   },
   created() {
@@ -97,6 +128,8 @@ export default {
     } else {
       this.cars = JSON.parse(cars);
     }
+    this.paginate();
+    console.log('teste', this.cars);
   },
 };
 </script>
