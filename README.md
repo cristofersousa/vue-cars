@@ -35,41 +35,14 @@ bibliotecas, qualquer decisão que quiser tomar.
 - Siga perfeitamente o layout determinado.
 
 
-
-> Carga inicial de dados
-
-  [{ "combustivel" : "Flex",
-      "imagem" : null,
-      "marca" : "Volkswagem",
-      "modelo" : "Gol",
-      "placa" : "FFF-5498",
-      “valor” : “20000”
-    },
-    { "combustivel" : "Gasolina",
-      "imagem" : null,
-      "marca" : "Volkswagem",
-      "modelo" : "Fox",
-      "placa" : "FOX-4125",
-      “valor” : “20000”
-    },
-    { "combustivel" : "Alcool",
-      "imagem" : "http://carros.ig.com.br/fotos/2010/290_193/Fusca2_290_193.jpg",
-      "marca" : "Volkswagen",
-      "modelo" : "Fusca",
-      "placa" : "PAI-4121",
-      “valor” : “20000”
-  }]
-
-
-
 ## Build Setup
 
 ``` bash
 # install dependencies
-npm install
+npm install || yarn install
 
 # serve with hot reload at localhost:8080
-npm run dev
+npm run dev || yarn run dev
 
 # build for production with minification
 npm run build
