@@ -1,6 +1,6 @@
 <template>
   <div id="ThumbsImage">
-  <div class="modal">
+  <div class="  modal">
     <div class="modal-background"></div>
       <div class="modal-content">
         <div class="box">
