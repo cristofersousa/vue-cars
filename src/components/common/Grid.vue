@@ -34,7 +34,7 @@
               <td> {{ car.marca }} </td>
               <td>
                   <div v-if="car.imagem !== null">
-                    <a href="#" > Imagem </a>
+                    <a @click="showModal" > Imagem </a>
                   </div>
                   <div v-else>
                           Sem Foto
@@ -49,7 +49,10 @@
       </div>
 
       <pagination> </pagination>
-      <thumbs-image @showImage="showImage"> </thumbs-image>
+      <thumbs-image
+        v-show="visibility"
+      >
+      </thumbs-image>
     </div>
   </div>
 </template>
@@ -70,6 +73,7 @@ export default {
   data() {
     return {
       removeCars: [],
+      visibility: false,
     };
   },
 
@@ -77,8 +81,14 @@ export default {
     selectCar() {
       this.selectedCars(this.removeCars);
     },
+    showModal() {
+      this.visibility = !this.visibility;
+    },
+    closeModal() {
+      this.visibility = false;
+    },
     showImage() {
-      this.$emit('showImage');
+      this.visibility = true;
     },
     order(tipo) {
       this.$emit('order', tipo);
