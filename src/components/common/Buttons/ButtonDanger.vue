@@ -2,11 +2,14 @@
   <div id="button-danger">
     <button
       class="button is-danger"
-      click="deleteCars">Excluir Carro
+      @click="deleteCars">Excluir Carro
     </button>
   </div>
 </template>
 <script>
+
+import { mapActions } from 'vuex';
+
 export default {
   name: 'button-danger',
   data() {
@@ -14,9 +17,9 @@ export default {
     };
   },
   methods: {
-    deleteCars() {
-      this.$emit('deleteCars');
-    },
+    ...mapActions([
+      'deleteCars',
+    ]),
   },
 };
 </script>

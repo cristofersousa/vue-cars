@@ -58,7 +58,6 @@ export default {
 
     ...mapActions([
       'getCars',
-      'deleteCars',
     ]),
   },
   created() {
@@ -72,7 +71,6 @@ export default {
 </style>
 
 <style>
-
   body {
     height: 100vh;
     background-color:#F1F4F9;

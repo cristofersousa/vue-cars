@@ -7,8 +7,7 @@
             <btn-success
               @showModal="tooggleModal">
             </btn-success>
-            <btn-remove
-              @deleteCars="deleteCars">
+            <btn-remove>
             </btn-remove>
           </div>
           <div class="column is-6">
@@ -42,7 +41,6 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
 import BtnSuccess from './Buttons/ButtonSuccess';
 import BtnRemove from './Buttons/ButtonDanger';
 import NewCar from './../car/NewCar';
@@ -68,10 +66,6 @@ export default {
       this.$emit('searchCar', this.search);
       this.search = '';
     },
-
-    ...mapActions([
-      'deleteCars',
-    ]),
   },
 
   watch: {
