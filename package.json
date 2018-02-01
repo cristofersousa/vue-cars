@@ -13,7 +13,7 @@
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "build": "node build/build.js",
-    "postinstall": "npm install express"
+    "postinstall": "npm install express && npm run build"
   },
   "dependencies": {
     "bulma": "^0.6.2",
