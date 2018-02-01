@@ -6,7 +6,7 @@
             <div class="box">
 
           <div class="field">
-            <label class="label">Placa</label>
+            <label class="label">Placa <sup>*</sup></label>
               <div class="control">
                 <input
                   class="input"
@@ -21,7 +21,7 @@
           </div>
 
            <div class="field">
-            <label class="label">Modelo</label>
+            <label class="label">Modelo <sup>*</sup></label>
               <div class="control">
                 <input class="input" type="text" placeholder="" v-model="newCar.modelo">
               </div>
@@ -49,7 +49,7 @@
           </div>
 
            <div class="field">
-            <label class="label">Valor</label>
+            <label class="label">Valor <sup>*</sup></label>
               <div class="control">
                 <input class="input" type="text" placeholder="" v-model="newCar.valor">
               </div>
@@ -98,9 +98,10 @@ export default {
   },
   computed: {
     isInvalid() {
-      const placa = this.newCar.placa;
-      const modelo = this.newCar.modelo;
-      if (placa === '' || modelo === '') {
+      const plate = this.newCar.placa;
+      const model = this.newCar.modelo;
+      const price = this.newCar.valor;
+      if (plate === '' || model === '' || price === '') {
         return true;
       }
       return false;
