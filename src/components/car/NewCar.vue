@@ -165,45 +165,4 @@ export default {
     text-align: left;
   }
 
-  /* .input, .textarea {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    border: 0;
-    border-radius: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    font-size: 1.2rem;
-    height: 2.25em;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    line-height: 1.5;
-    padding-bottom: calc(0.375em - 1px);
-    padding-left: calc(0.625em - 1px);
-    padding-right: calc(0.625em - 1px);
-    padding-top: calc(0.375em - 1px);
-    position: relative;
-    vertical-align: top;
-    background-color: white;
-    border-bottom: 1px solid #999;
-    color: #363636;
-    -webkit-box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
-    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0);
-    max-width: 100%;
-    width: 100%;
-}
-
-  .input:focus, .input.is-focused, .input:active, .input.is-active,
-  .textarea:focus, .textarea.is-focused, .textarea:active, .textarea.is-active {
-    border-color: #0088ed;
-    -webkit-box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0);
-    box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0);
-  } */
-
 </style>

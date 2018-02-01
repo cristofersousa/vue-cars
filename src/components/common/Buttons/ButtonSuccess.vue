@@ -13,15 +13,9 @@ export default {
   props: ['visible'],
   data() {
     return {
-
     };
   },
-
   methods: {
-
-    makeLocalStorage() {
-
-    },
     createModal() {
       this.$emit('showModal');
     },
@@ -30,16 +24,15 @@ export default {
 </script>
 
 <style>
+  .button {
+    float: left;
+    margin-right: 20px;
+  }
 
-.button {
-  float: left;
-  margin-right: 20px;
-}
-
-.button.is-sucess {
-  color: #fff;
-  background-color: #5cb85c;
-  border-color: #4cae4c;
-}
+  .button.is-sucess {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+  }
 </style>
 
