@@ -7,6 +7,9 @@
 
 Desenvolver uma mini aplicação para controle de frotas.
 
+> URL Produção:
+(https://vue-cars.herokuapp.com/)[https://vue-cars.herokuapp.com/]
+
 > Descrição:​​
 
   O objetivo desse desafio é entender como você pensa e resolve problemas do dia a dia. Para isso o desafio é desenvolver uma aplicação frontend*
