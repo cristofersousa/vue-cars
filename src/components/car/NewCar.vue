@@ -102,6 +102,9 @@ export default {
       }
       return false;
     },
+    // validPlaca() {
+    //   const regex =
+    // },
   },
   watch: {
     placa(valAtual, valAnterior) {
