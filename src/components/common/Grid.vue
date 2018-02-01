@@ -34,10 +34,10 @@
               <td> {{ car.marca }} </td>
               <td>
                   <div v-if="car.imagem !== null">
-                    <a @click="showModal" > Imagem </a>
+                    <a @click="showModal(car.imagem)" > Imagem </a>
                   </div>
                   <div v-else>
-                          Sem Foto
+                      Sem Foto
                   </div>
               </td>
               <td> {{ car.combustivel }} </td>
@@ -51,6 +51,8 @@
       <pagination> </pagination>
       <thumbs-image
         v-show="visibility"
+        :picture="picture"
+        @tooggleModal="tooggleModal"
       >
       </thumbs-image>
     </div>
@@ -74,6 +76,7 @@ export default {
     return {
       removeCars: [],
       visibility: false,
+      picture: null,
     };
   },
 
@@ -81,14 +84,13 @@ export default {
     selectCar() {
       this.selectedCars(this.removeCars);
     },
-    showModal() {
+    showModal(picture) {
+      this.tooggleModal();
+      this.picture = picture;
+    },
+    tooggleModal() {
       this.visibility = !this.visibility;
-    },
-    closeModal() {
-      this.visibility = false;
-    },
-    showImage() {
-      this.visibility = true;
+      this.picture = '';
     },
     order(tipo) {
       this.$emit('order', tipo);

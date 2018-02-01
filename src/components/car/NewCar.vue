@@ -9,11 +9,11 @@
             <label class="label">Placa <sup>*</sup></label>
               <div class="control">
                 <input
-                  class="input"
+                  :class="['input', {'is-success':!validInput.placa, 'is-danger':validInput.placa}]"
                   type="text"
                   placeholder=""
                   pattern= "[A-Za-z]{3}-[0-9]{4}"
-                  :mask="['###-####']"
+                  v-mask="'AAA-####'"
                   v-model="newCar.placa"
                   maxlength="8"
                   >
@@ -38,7 +38,7 @@
           <div class="field">
             <label class="label">Imagem</label>
               <div class="control">
-                <input class="input" type="text" placeholder="" v-model="newCar.foto">
+                <input class="input" type="text" placeholder="" v-model="newCar.imagem">
               </div>
           </div>
 
@@ -52,7 +52,8 @@
            <div class="field">
             <label class="label">Valor <sup>*</sup></label>
               <div class="control">
-                <input class="input" type="text" placeholder="" v-model="newCar.valor">
+                <input class="input" type="text" placeholder=""
+                  v-money="money" v-model.lazy="newCar.valor">
               </div>
           </div>
 
@@ -91,9 +92,16 @@ export default {
         placa: '',
         modelo: '',
         marca: '',
-        foto: '',
+        imagem: '',
         combustivel: '',
         valor: '',
+      },
+      money: {
+        decimal: ',',
+        thousands: '.',
+        prefix: 'R$ ',
+        precision: 2,
+        masked: false,
       },
     };
   },
@@ -107,14 +115,13 @@ export default {
       }
       return false;
     },
+    validInput() {
+      return {
+        placa: (this.newCar.placa.length < 8),
+      };
+    },
   },
   watch: {
-    placa() {
-
-    },
-    valor() {
-
-    },
   },
   methods: {
     cleanForm() {
@@ -122,12 +129,15 @@ export default {
         placa: '',
         modelo: '',
         marca: '',
-        foto: '',
+        imagem: '',
         combustivel: '',
         valor: '',
       };
     },
     saveCar() {
+      if (this.newCar.imagem === '') {
+        this.newCar.image = null;
+      }
       this.addCar(this.newCar);
       this.cleanForm();
       this.tooggleModal();

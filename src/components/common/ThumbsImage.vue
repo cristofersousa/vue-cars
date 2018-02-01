@@ -1,12 +1,12 @@
 <template>
   <div id="ThumbsImage">
-  <div class="modal">
+  <div class="is-active modal">
     <div class="modal-background"></div>
       <div class="modal-content">
         <p class="modal-card-title">Thumbs Car</p>
-          <button class="delete" aria-label="close"></button>
+          <button class="delete" aria-label="close" @click="tooggleModal"></button>
           <div class="box">
-            <img src="http://carros.ig.com.br/fotos/2010/290_193/Fusca2_290_193.jpg">
+            <img :src="picture">
           </div>
       </div>
     </div>
@@ -17,6 +17,7 @@ import { mapGetters } from 'vuex';
 
 export default {
   name: 'ThumbsImage',
+  props: ['picture'],
   data() {
     return {
 
@@ -26,8 +27,8 @@ export default {
     ...mapGetters({
       cars: 'getCars',
     }),
-    closemodal() {
-      this.$emit('closeModal');
+    tooggleModal() {
+      this.$emit('tooggleModal');
     },
   },
 

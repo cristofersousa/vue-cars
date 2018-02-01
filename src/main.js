@@ -2,10 +2,12 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import VueTheMask from 'vue-the-mask';
+import money from 'v-money';
 import store from './store';
 import App from './App';
 
 Vue.use(VueTheMask);
+Vue.use(money);
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
