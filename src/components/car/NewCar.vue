@@ -12,6 +12,7 @@
                   class="input"
                   type="text"
                   placeholder=""
+                  pattern="\[A-Za-z]{3}-[0-9]{4}\"
                   v-model="newCar.placa" maxlength="8">
                   <p class="help">e.g: XXX-9999</p>
               </div>
@@ -102,18 +103,21 @@ export default {
       }
       return false;
     },
+    // placa(newValue, oldValue) {
+    //   const carPlateFormatter = ([z,x,y, ...numbers]) => `${z+x+y}-${numbers.join('')
+    //   // const pattern = newValue.split('');
+    //   // if (pattern.length >= 3 && pattern.indexOf('-') === -1) {
+    //   //   pattern.splice(4, 0, '-');
+    //   //   this.newCar.placa = pattern.join('');
+    //   // }
+    //   return newValue;
+    // },
     // validPlaca() {
     //   const regex =
     // },
   },
   watch: {
-    placa(valAtual, valAnterior) {
-      const pattern = valAtual.split('');
-      if (pattern.length >= 3 && pattern.indexOf('-') === -1) {
-        pattern.splice(4, 0, '-');
-        this.newCar.placa = pattern.join('');
-      }
-    },
+
   },
   methods: {
     cleanForm() {
