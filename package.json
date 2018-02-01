@@ -5,6 +5,7 @@
   "author": "Cristofer Sousa <cristofer.sousa@gmail.com>",
   "private": true,
   "scripts": {
+    "dist": "surge --domain vue-cars.surge.sh",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
@@ -15,10 +16,13 @@
   },
   "dependencies": {
     "bulma": "^0.6.2",
+    "express": "^4.16.2",
     "font-awesome": "^4.7.0",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
+    "surge": "^0.19.0",
     "vue": "^2.5.2",
+    "vue-the-mask": "^0.11.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

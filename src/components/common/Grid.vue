@@ -49,6 +49,7 @@
       </div>
 
       <pagination> </pagination>
+      <thumbs-image @showImage="showImage"> </thumbs-image>
     </div>
   </div>
 </template>
@@ -56,6 +57,7 @@
 <script>
 import { mapActions } from 'vuex';
 import Pagination from './Pagination';
+import ThumbsImage from './ThumbsImage';
 
 
 export default {
@@ -63,6 +65,7 @@ export default {
   props: ['cars'],
   components: {
     Pagination,
+    ThumbsImage,
   },
   data() {
     return {
@@ -74,7 +77,9 @@ export default {
     selectCar() {
       this.selectedCars(this.removeCars);
     },
-
+    showImage() {
+      this.$emit('showImage');
+    },
     order(tipo) {
       this.$emit('order', tipo);
     },
