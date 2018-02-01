@@ -1,6 +1,9 @@
 <template>
   <div id="button-danger">
-    <button class="button is-danger"  @click="deleteCars">Excluir Carro</button>
+    <button
+      class="button is-danger"
+      click="deleteCars">Excluir Carro
+    </button>
   </div>
 </template>
 <script>
@@ -8,7 +11,6 @@ export default {
   name: 'button-danger',
   data() {
     return {
-
     };
   },
   methods: {
@@ -31,4 +33,3 @@ export default {
 
 }
 </style>
-

@@ -33,7 +33,6 @@
 
       <new-car
         v-show="visibility"
-        @saveCar="updateCars"
         @tooggle="tooggleModal"
       >
       </new-car>
@@ -43,6 +42,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import BtnSuccess from './Buttons/ButtonSuccess';
 import BtnRemove from './Buttons/ButtonDanger';
 import NewCar from './../car/NewCar';
@@ -61,18 +61,28 @@ export default {
     };
   },
   methods: {
-    updateCars(car) {
-      this.$emit('addList', car);
-    },
     tooggleModal() {
       this.visibility = !this.visibility;
-    },
-    deleteCars() {
-      this.$emit('deleteCars');
     },
     searchCar() {
       this.$emit('searchCar', this.search);
       this.search = '';
+    },
+
+    ...mapActions([
+      'deleteCars',
+    ]),
+  },
+
+  watch: {
+    search() {
+      if (this.search.length >= 3) {
+        this.$emit('searchCar', this.search);
+      }
+
+      if (this.search.length === 0) {
+        this.$emit('searchCar', this.search);
+      }
     },
   },
 };
@@ -84,4 +94,3 @@ export default {
     color: #3a5f7f;
   }
 </style>
-

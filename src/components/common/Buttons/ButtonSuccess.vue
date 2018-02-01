@@ -13,15 +13,9 @@ export default {
   props: ['visible'],
   data() {
     return {
-
     };
   },
-
   methods: {
-
-    makeLocalStorage() {
-
-    },
     createModal() {
       this.$emit('showModal');
     },
@@ -30,7 +24,6 @@ export default {
 </script>
 
 <style>
-
 .button {
   float: left;
   margin-right: 20px;
@@ -42,4 +35,3 @@ export default {
   border-color: #4cae4c;
 }
 </style>
-

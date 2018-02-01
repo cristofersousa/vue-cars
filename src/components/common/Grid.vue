@@ -54,7 +54,9 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import Pagination from './Pagination';
+
 
 export default {
   name: 'grid',
@@ -70,11 +72,16 @@ export default {
 
   methods: {
     selectCar() {
-      this.$emit('selectCar', this.removeCars);
+      this.selectedCars(this.removeCars);
     },
+
     order(tipo) {
       this.$emit('order', tipo);
     },
+
+    ...mapActions([
+      'selectedCars',
+    ]),
   },
 };
 </script>
