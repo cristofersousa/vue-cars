@@ -1,24 +1,28 @@
 # vue-cars
 
-> Desafio Front-End | ContaAzul
+***Desafio Front-End | ContaAzul***
 
-```
-Objetivo:​​Desenvolver mini aplicação para controle de frotas.
-Descrição:​​O objetivo desse desafio é entender como você pensa e resolve problemas do dia a dia.
-Para isso o desafio é desenvolver uma aplicação frontend (Não há necessidade de escrever a parte
-backend) conforme os requisitos abaixo.
 
-```
+> Objetivo:​​
+
+Desenvolver uma mini aplicação para controle de frotas.
+
+> Descrição:​​
+
+  O objetivo desse desafio é entender como você pensa e resolve problemas do dia a dia. Para isso o desafio é desenvolver uma aplicação frontend*
+
+`*(Não há necessidade de escrever a parte backend) conforme os requisitos abaixo.`
+
 
 ### Requisitos funcionais:
--  Desenvolver CRUD de cadastro de veículos.
--  Será possível realizar uma busca, filtrando os veículos por combustível e/ou marca.
+- Desenvolver CRUD de cadastro de veículos.
+- Será possível realizar uma busca, filtrando os veículos por combustível e/ou marca.
 - Na primeira execução trazer os veiculos da lista anexa.
 - A lista de veículos deve apresentar 5 veículos por página.*
 - Deve ser uma Single Page Application
 
 > Objeto​​ veículo:
--  Placa*
+- Placa*
 - Imagem.
 - Marca*
 - Modelo*

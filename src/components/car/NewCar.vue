@@ -15,7 +15,8 @@
                   pattern= "[A-Za-z]{3}-[0-9]{4}"
                   :mask="['###-####']"
                   v-model="newCar.placa"
-                  maxlength="8">
+                  maxlength="8"
+                  >
                   <p class="help">e.g: XXX-9999</p>
               </div>
           </div>
