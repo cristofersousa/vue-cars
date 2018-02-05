@@ -1,14 +1,11 @@
 # vue-cars
 
-***Desafio Front-End | ContaAzul***
+***Test Front-End ***
 
 
 > Objetivo:​​
 
 Desenvolver uma mini aplicação para controle de frotas.
-
-> URL Produção:
-(https://vue-cars.herokuapp.com/)[https://vue-cars.herokuapp.com/]
 
 > Descrição:​​
 
