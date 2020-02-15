@@ -1,8 +1,5 @@
 # vue-cars
 
-***Test Front-End ***
-
-
 > Objetivo:​​
 
 Desenvolver uma mini aplicação para controle de frotas.
